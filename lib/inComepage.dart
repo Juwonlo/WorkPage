@@ -38,20 +38,21 @@ class _DropdownWidgetState extends State<DropdownWidget> {
               'Income',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 23,
+                fontSize: 27,
               ),
             ),
           ),
           Positioned(
-            right: 0,
-            top: -3,
+
+            right: -7,
+            top: 0,
               child: PopupMenuButton<DropdownItem>(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
                 icon: Icon(
                   Icons.account_balance_wallet_rounded, // Replace with your desired icon
-                  color: Colors.blue,
+                  color: Colors.grey,
                   size: 22, // Replace with your desired size
                 ),
                 onSelected: (DropdownItem item) {
