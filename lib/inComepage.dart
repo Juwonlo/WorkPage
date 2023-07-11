@@ -20,10 +20,10 @@ class _DropdownWidgetState extends State<DropdownWidget> {
   DropdownItem? selectedItem;
 
   List<DropdownItem> dropdownItems = [
-    DropdownItem(icon: Icons.home, text: 'Home'),
-    DropdownItem(icon: Icons.business, text: 'Business'),
-    DropdownItem(icon: Icons.school, text: 'School'),
-    DropdownItem(icon: Icons.settings, text: 'Settings'),
+    DropdownItem(icon: Icons.home, text: 'Income'),
+    DropdownItem(icon: Icons.business, text: 'Invoice'),
+    DropdownItem(icon: Icons.school, text: 'Withdrawal'),
+    DropdownItem(icon: Icons.settings, text: 'Transactions'),
   ];
 
   @override
@@ -60,26 +60,26 @@ class _DropdownWidgetState extends State<DropdownWidget> {
                     selectedItem = item;
                   });
                 },
-                offset: Offset(-80, 17),
+                offset: Offset(-88, 17),
                 itemBuilder: (BuildContext context) {
                   return dropdownItems.map((DropdownItem item) {
                     return PopupMenuItem<DropdownItem>(
                       value: item,
                       child: Container(
-                        width: 180,
+                        width: 210,
                         height: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(
-                            color: selectedItem == item ? Colors.black : Colors.transparent,
+                            color: selectedItem == item ? Colors.indigoAccent : Colors.transparent,
                             width: 2.0,
                           ),
                         ),
-                        padding: EdgeInsets.all(8),
+                        padding: EdgeInsets.only(left: 10, right: 5),
                         child: Row(
                           children: [
                             Icon(
-                                item.icon, color: selectedItem == item ? Colors.blue : null,
+                                item.icon, color: selectedItem == item ? Colors.indigoAccent : Colors.grey[700],
                               size: 30,
                             ),
                             SizedBox(width: 20.0),
@@ -87,7 +87,7 @@ class _DropdownWidgetState extends State<DropdownWidget> {
                               item.text,
                               style: TextStyle(
                                 fontSize: 22,
-                                color: selectedItem == item ? Colors.blue : null,
+                                color: selectedItem == item ? Colors.indigoAccent : Colors.grey[700],
                                 fontWeight: selectedItem == item ? FontWeight.bold : null,
                               ),
                             ),
